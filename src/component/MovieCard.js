@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card,Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom'
 // import ReactStars from "react-rating-stars-component";
 
 function MovieCard({movie}){
@@ -20,7 +21,9 @@ function MovieCard({movie}){
              size={24}
          /> */}
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Link to = { '/movie/' + movie.id }>
+                       <Button variant="primary">Go somewhere</Button>
+           </Link>
         </Card.Body>
         </Card>
     )
