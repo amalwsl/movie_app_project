@@ -1,5 +1,6 @@
 import { Navbar,Nav,Button,Form,FormControl } from "react-bootstrap";
 import ReactStars from "react-rating-stars-component";
+import { Link } from "react-router-dom";
 
 
 
@@ -11,7 +12,9 @@ function NavBar({setSearch,setSearchRate}){
 
 return(
     <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="#home">Movie App</Navbar.Brand>
+    <Link to="/">
+      <Navbar.Brand >Movie App</Navbar.Brand>
+    </Link>
     <Nav className="mr-auto">
       
     </Nav>

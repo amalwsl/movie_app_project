@@ -21,7 +21,7 @@ function MovieCard({movie}){
              size={24}
          /> */}
             </Card.Text>
-            <Link to = { '/movie/' + movie.id }>
+            <Link to = {`/${movie.id}`}>
                        <Button variant="primary">Go somewhere</Button>
            </Link>
         </Card.Body>

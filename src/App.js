@@ -4,7 +4,7 @@ import NavBar from './component/NavBar';
 import { useState } from 'react';
 import MoviesList from './component/MoviesList';
 import AddMovie from './component/AddMovie';
-import {Route,Switch} from 'react-router-dom'
+import {HashRouter as Router,Switch,Route} from 'react-router-dom'
 import Movie from './component/movie';
 
 function App() {
@@ -58,7 +58,7 @@ function App() {
           "https://upload.wikimedia.org/wikipedia/commons/b/b5/12_Angry_Men_%281957_film_poster%29.jpg",
         rate: 4,
         id: 5,
-        trailer: "https://www.youtube.com/embed/EXeTwQWrcwY"
+        trailer: "https://www.youtube.com/embed/_13J_9B5jEk"
       },
       {
         title: "Schindler's List",
@@ -121,11 +121,13 @@ function App() {
 
 
   return (
-    <Route>
+    <Router>
       <div className="App">
 
       <NavBar setSearch={setSearch} setSearchRate={setSearchRate} />
+      <Route exact path="/">
       <MoviesList movies={movies} search={search} searchRate={searchRate}/>
+      </Route>
       <Switch>
         <Route exact path="/:ID" render={(props)=> 
               <Movie {...props} movies={movies}/>}/>
@@ -134,7 +136,7 @@ function App() {
       <AddMovie ajoutFilm={ajoutFilm}  />
 
       </div>
-    </Route>
+    </Router>
   );
 }
 
